@@ -1,14 +1,17 @@
-import {API_KEY, API_URL} from '@env';
+// import {API_KEY, API_URL} from '@env';
 import axios, {InternalAxiosRequestConfig} from 'axios';
 
 const http = axios.create({
-  baseURL: API_URL, // http://localhost:8001
+  baseURL: process.env.API_URL, // http://localhost:8001
 });
 
 http.interceptors.request.use(function (config) {
   return {
     ...config,
-    headers: {...config.headers, Authorization: `Client-ID ${API_KEY}`},
+    headers: {
+      ...config.headers,
+      Authorization: `Client-ID ${process.env.API_KEY}`,
+    },
   } as InternalAxiosRequestConfig;
 });
 

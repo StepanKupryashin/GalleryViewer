@@ -5,7 +5,7 @@
  * @format
  */
 
-import { NavigationContainer } from '@react-navigation/native';
+import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {
@@ -26,10 +26,10 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 import HomeScreen from './src/screens/Home/HomeScreen';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 function DetailsScreen() {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Details Screen</Text>
     </View>
   );
@@ -45,14 +45,16 @@ function App(): React.JSX.Element {
 
   return (
     <NavigationContainer>
-      <Tab.Navigator initialRouteName='Home'>
-        <Tab.Screen name='Home' component={HomeScreen}    options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => (
-            <Text>dfjkghd</Text>
-          ),
-        }}></Tab.Screen>
-        <Tab.Screen name='Details' component={DetailsScreen}></Tab.Screen>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarLabel: 'Home',
+            tabBarIcon: ({color, size}) => <Text>dfjkghd</Text>,
+          }}
+        />
+        <Tab.Screen name="Details" component={DetailsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );

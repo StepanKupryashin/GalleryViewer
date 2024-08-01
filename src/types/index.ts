@@ -9,3 +9,7 @@ export interface IStoreWithLoading {
 export interface IStoreWithService<T> extends IStoreWithLoading {
   get service(): T;
 }
+
+export type TAxiosResponse<T> = {
+  data: T;
+};
